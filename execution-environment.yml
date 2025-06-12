@@ -5,6 +5,8 @@ images:
     name: quay.io/ansible/awx-ee:24.6.1
 
 dependencies:
+  python:
+    - hvac
   # python_interpreter:
   #   package_system: python3
   # ansible_core:
@@ -17,3 +19,4 @@ dependencies:
   galaxy:
     collections:
     - name: crowdstrike.falcon
+    - name: community.hashi_vault
