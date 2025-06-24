@@ -7,16 +7,20 @@ images:
 dependencies:
   python:
     - hvac
-  # python_interpreter:
-  #   package_system: python3
-  # ansible_core:
-  #   package_pip: ansible-core
-  # ansible_runner:
-  #   package_pip: ansible-runner
-  # system:
-  # - openssh-clients
-  # - sshpass
   galaxy:
     collections:
     - name: crowdstrike.falcon
     - name: community.hashi_vault
+
+additional_build_files:
+    - src: files/ansible.cfg
+      dest: configs
+
+additional_build_steps:
+  prepend_base:
+    - RUN echo This is a prepend base command!
+    # Enable Non-default stream before packages provided by it can be installed. (optional)
+    # - RUN $PKGMGR module enable postgresql:15 -y
+    # - RUN $PKGMGR install -y postgresql
+  prepend_galaxy:
+    - COPY _build/configs/ansible.cfg /etc/ansible/ansible.cfg
