@@ -19,9 +19,8 @@ dependencies:
 additional_build_steps:
   prepend_base:
     - RUN echo This is a prepend base command!
-    - RUN mkdir -p /etc/ansible
     # Enable Non-default stream before packages provided by it can be installed. (optional)
     # - RUN $PKGMGR module enable postgresql:15 -y
     # - RUN $PKGMGR install -y postgresql
-  prepend_galaxy:
-    - COPY files/ansible.cfg /etc/ansible/ansible.cfg
+  # prepend_galaxy:
+  #   - COPY files/ansible.cfg /etc/ansible/ansible.cfg
