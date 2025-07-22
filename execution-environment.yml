@@ -11,6 +11,7 @@ dependencies:
     collections:
     - name: crowdstrike.falcon
     - name: community.hashi_vault
+    - name: infoblox.nios_modules
 
 # additional_build_files:
 #     - src: files/ansible.cfg
