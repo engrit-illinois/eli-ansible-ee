@@ -12,6 +12,7 @@ dependencies:
     - name: crowdstrike.falcon
     - name: community.hashi_vault
     - name: infoblox.nios_modules
+    - name: vmware.vmware_rest #Needed to adjust memory and other resources on existing VMs with ansible: https://docs.ansible.com/ansible/4/scenario_guides/vmware_rest_scenarios/installation.html 
 
 # additional_build_files:
 #     - src: files/ansible.cfg
