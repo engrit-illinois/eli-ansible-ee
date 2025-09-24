@@ -1,0 +1,19 @@
+
+version: 3
+
+build_arg_defaults:
+  EE_BASE_IMAGE: quay.io/ansible/awx-ee:24.6.1
+
+dependencies:
+  python:
+    - hvac
+  galaxy:
+    collections:
+      - name: crowdstrike.falcon
+      - name: community.hashi_vault
+      - name: infoblox.nios_modules
+      - name: vmware.vmware_rest
+
+additional_build_steps:
+  prepend_base:
+    - RUN echo This is a prepend base command!
